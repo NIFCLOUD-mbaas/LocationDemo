@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        "mobi.monaca.plugins.Monaca",
+        "org.apache.cordova.splashscreen",
+        "org.apache.cordova.statusbar",
+        "org.apache.cordova.geolocation"
+    ],
+    "framework_version": "3.5",
+    "xcode_version": "5",
+    "title-ja": "",
+    "title-en": "",
+    "description-ja": "",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+
+    ],
+    "name": "generated-1416072405-54675313fd17342e27f03c5c"
+}
