@@ -79,16 +79,11 @@ function savePost(){
         //位置情報オブジェクトを作成
         var geoPoint = new NCMB.GeoPoint(location.coords.latitude, location.coords.longitude);
         
-        //Postクラスのインスタンスを作成
-        var Post = NCMB.Object.extend("Yokote");
-        var post = new Post();
+        //Postクラスのインスタンスを作成★
         
-        //値を設定
-        post.set("name", title);
-        post.set("location", geoPoint);
+        //値を設定★
         
-        //保存を実行
-        post.save();
+        //保存を実行★
         
         //前のページに戻る
         myNavigator.popPage();
