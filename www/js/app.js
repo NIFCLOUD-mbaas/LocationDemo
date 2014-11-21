@@ -40,10 +40,10 @@ function CurrentPoint(){
 function search(current){
     console.log("search");
     //位置情報を検索するクラスのNCMB.Objectを作成する
-    var Station = NCMB.Object.extend("Yokote");
+    var SpotObject = NCMB.Object.extend("Spot");
 
     //NCMB.Queryを作成
-    var query = new NCMB.Query(Station);
+    var query = new NCMB.Query(SpotObject);
     //位置情報をもとに検索する条件を設定
     var geoPoint = new NCMB.GeoPoint(current.geopoint.latitude,current.geopoint.longitude);
     query.withinKilometers("location", geoPoint, current.distance);
@@ -55,7 +55,7 @@ function search(current){
             // 検索が成功した場合の処理
             for (var i = 0; i < points.length; i++){
                 var point = points[i];
-                $("#result").append("<p>店名：" + point.get("name") + "</p>");
+                $("#result").append("<p>スポット名：" + point.get("name") + "</p>");
             }
         },
         error: function(error) {
