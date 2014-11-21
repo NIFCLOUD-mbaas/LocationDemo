@@ -40,13 +40,13 @@ function CurrentPoint(){
 function search(current){
     console.log("search");
     //位置情報を検索するクラスのNCMB.Objectを作成する
-    var SpotObject = NCMB.Object.extend("Spot");
+    var SpotClass = NCMB.Object.extend("Spot");
 
     //NCMB.Queryを作成
-    var query = new NCMB.Query(SpotObject);
+    var query = new NCMB.Query(SpotClass);
     //位置情報をもとに検索する条件を設定
     var geoPoint = new NCMB.GeoPoint(current.geopoint.latitude,current.geopoint.longitude);
-    query.withinKilometers("location", geoPoint, current.distance);
+    query.withinKilometers("geo", geoPoint, current.distance);
 
     //mobile backend上のデータ検索を実行する
     query.find({
