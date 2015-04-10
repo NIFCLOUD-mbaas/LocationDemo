@@ -74,7 +74,7 @@ function saveSpot(){
         //位置情報オブジェクトを作成
         var geoPoint = new NCMB.GeoPoint(location.coords.latitude, location.coords.longitude);
         
-        //Postクラスのインスタンスを作成★
+        //Spotクラスのインスタンスを作成★
         
         //値を設定★
         
