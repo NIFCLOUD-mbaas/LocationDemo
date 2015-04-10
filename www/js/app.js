@@ -7,7 +7,6 @@ $(function(){
 
 //位置情報取得に成功した場合のコールバック
 var onSuccess = function(position){
-    alert("緯度:" + position.coords.latitude + ", 経度:" + position.coords.longitude);
     var current = new CurrentPoint();
     current.distance = CurrentPoint.distance;   //検索範囲の半径を保持する    
     current.geopoint = position.coords;         //位置情報を保存する
@@ -16,7 +15,7 @@ var onSuccess = function(position){
 
 //位置情報取得に失敗した場合のコールバック
 var onError = function(error){
-    alert("現在位置を取得できませんでした");
+    console.log("現在位置を取得できませんでした");
 };
 
 //位置情報取得時に設定するオプション
@@ -38,7 +37,6 @@ function CurrentPoint(){
 
 //mobile backendから位置情報を検索するメソッド
 function search(current){
-    console.log("search");
     //位置情報を検索するクラスのNCMB.Objectを作成する
     var SpotClass = NCMB.Object.extend("Spot");
 
@@ -65,13 +63,10 @@ function search(current){
     });
 }
 
-//店舗を登録する
-function savePost(){
-    console.log("savePost");
+//スポットを登録する
+function saveSpot(){
     //位置情報が取得できたときの処理
     var onSuccess = function (location){
-        console.log("onSuccess");
-        console.log("lat:" + location.coords.latitude + " lon:" + location.coords.longitude);
         
         //記事内容を取得
         var title = $("#name").val();
@@ -91,7 +86,7 @@ function savePost(){
     
     //位置情報取得に失敗した場合の処理
     var onError = function(error){
-        alert("error:" + error.message);
+        console.log("error:" + error.message);
     }
     
     var option = {
