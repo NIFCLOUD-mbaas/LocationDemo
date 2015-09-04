@@ -2,7 +2,12 @@
 
 $(function(){
     //起動時にmobile backend APIキーを設定
-    NCMB.initialize("YOUR_APP_KEY","YOUR_CLIENT_KEY");
+    $.getJSON("setting.json", function(data) {
+        NCMB.initialize(
+            data.application_key,
+            data.client_key
+        );
+    });
 });
 
 //位置情報取得に成功した場合のコールバック
