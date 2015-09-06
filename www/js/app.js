@@ -25,7 +25,7 @@ var onError = function(error){
 
 //位置情報取得時に設定するオプション
 var option = {
-    timeout: 6000   //タイムアウト値(ミリ秒)
+    timeout: 60000   //タイムアウト値(ミリ秒)
 };
 
 //現在地を取得する
